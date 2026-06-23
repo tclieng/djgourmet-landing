@@ -1,0 +1,1036 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DJ Gourmet Sdn Bhd — Masakan Kampung, Rasa Sejati</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..600,600;1,8..60,400&family=Jost:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* ═══════════════════════════════════════
+       DJ GOURMET — NOSTALGIC MALAY HERITAGE THEME
+       Warm earth tones · Batik-inspired · Classic elegance
+       ═══════════════════════════════════════ */
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --c-hijau-tua:      #1a3d20;
+      --c-hijau-muda:     #2d5a35;
+      --c-hijau-pucuk:    #4a7c52;
+      --c-emas:           #c9a227;
+      --c-emas-terang:    #e6b82a;
+      --c-krem:           #f5efe0;
+      --c-krem-gelap:     #ebe2cc;
+      --c-coklat:         #4a2c17;
+      --c-coklat-muda:    #7a5a3a;
+      --c-coklat-cair:    #8b6914;
+      --c-merah-tanah:    #8b3a3a;
+      --c-kayu:           #d4b896;
+      --c-text:           #3d2914;
+      --c-text-ringan:    #6b5744;
+      --c-border:         #c4b49a;
+      --font-display:     'Playfair Display', Georgia, 'Times New Roman', serif;
+      font-body:          'Source Serif 4', 'Noto Serif', Georgia, serif;
+      font-ui:            'Jost', 'Segoe UI', sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font-body);
+      background: var(--c-krem);
+      color: var(--c-text);
+      line-height: 1.75;
+      font-size: 16px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ─── Decorative batik border pattern ─── */
+    .batik-border-top, .batik-border-bottom {
+      height: 12px;
+      background:
+        repeating-linear-gradient(90deg,
+          var(--c-hijau-tua) 0px, var(--c-hijau-tua) 20px,
+          var(--c-emas) 20px, var(--c-emas) 22px,
+          transparent 22px, transparent 28px,
+          var(--c-hijau-tua) 28px, var(--c-hijau-tua) 40px,
+          var(--c-emas) 40px, var(--c-emas) 42px,
+          transparent 42px, transparent 56px
+        );
+      opacity: 0.6;
+    }
+
+    .batik-border-bottom {
+      background:
+        repeating-linear-gradient(90deg,
+          var(--c-emas) 0px, var(--c-emas) 18px,
+          var(--c-hijau-tua) 18px, var(--c-hijau-tua) 20px,
+          transparent 20px, transparent 26px,
+          var(--c-emas) 26px, var(--c-emas) 44px,
+          var(--c-hijau-tua) 44px, var(--c-hijau-tua) 46px,
+          transparent 46px, transparent 56px
+        );
+    }
+
+    /* ─── NAVIGATION ─── */
+    .nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      background: rgba(26, 61, 32, 0.97);
+      backdrop-filter: blur(8px);
+      padding: 0 36px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      z-index: 1000;
+      border-bottom: 2px solid var(--c-emas);
+      height: 64px;
+    }
+
+    .nav-logo {
+      font-family: var(--font-display);
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--c-emas);
+      text-decoration: none;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+
+    .nav-links { display: flex; gap: 32px; }
+
+    .nav-links a {
+      color: rgba(245,239,224,0.85);
+      text-decoration: none;
+      font-family: var(--font-ui);
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      transition: color 0.3s;
+      position: relative;
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -4px; left: 0;
+      width: 0; height: 1.5px;
+      background: var(--c-emas);
+      transition: width 0.3s;
+    }
+
+    .nav-links a:hover { color: var(--c-emas); }
+    .nav-links a:hover::after { width: 100%; }
+
+    .nav-cta {
+      background: var(--c-emas);
+      color: var(--c-hijau-tua);
+      padding: 10px 24px;
+      font-family: var(--font-ui);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: all 0.3s;
+      border: none;
+    }
+
+    .nav-cta:hover {
+      background: var(--c-krem);
+      color: var(--c-hijau-tua);
+    }
+
+    body { padding-top: 64px; }
+
+    /* ─── HERO — Nostalgic Kampung Feel ─── */
+    .hero {
+      background:
+        linear-gradient(180deg,
+          var(--c-hijau-tua) 0%,
+          var(--c-hijau-muda) 45%,
+          var(--c-hijau-pucuk) 100%
+        );
+      position: relative;
+      overflow: hidden;
+      padding: 70px 30px 80px;
+    }
+
+    /* Subtle traditional pattern overlay */
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      opacity: 0.04;
+      background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M40 0 C50 15 65 20 80 40 C65 60 50 65 40 80 C30 65 15 60 0 40 C15 20 30 15 40 0Z' fill='%23f5efe0' fill-opacity='1'/%3E%3C/svg%3E");
+      background-size: 80px 80px;
+    }
+
+    /* Bottom wave separator */
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: -2px; left: 0; right: 0;
+      height: 60px;
+      background: var(--c-krem);
+      clip-path: ellipse(55% 100% at 50% 100%);
+    }
+
+    .hero-inner {
+      max-width: 1140px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-left { padding-right: 20px; }
+
+    .hero-status {
+      display: inline-block;
+      font-family: var(--font-ui);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--c-emas);
+      border: 1.5px solid var(--c-emas);
+      padding: 6px 18px;
+      margin-bottom: 24px;
+      position: relative;
+    }
+
+    .hero-status::before, .hero-status::after {
+      content: '◆';
+      position: absolute;
+      top: 50%; transform: translateY(-50%);
+      font-size: 6px;
+      color: var(--c-emas);
+    }
+    .hero-status::before { left: 6px; }
+    .hero-status::after { right: 6px; }
+
+    .hero-brand {
+      font-family: var(--font-display);
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--c-emas);
+      letter-spacing: 5px;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+
+    .hero-title {
+      font-family: var(--font-display);
+      font-size: 62px;
+      font-weight: 900;
+      color: var(--c-krem);
+      line-height: 1.05;
+      margin-bottom: 4px;
+      letter-spacing: -0.5px;
+    }
+
+    .hero-subtitle {
+      font-family: var(--font-display);
+      font-size: 16px;
+      font-weight: 400;
+      color: var(--c-kayu);
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      margin-bottom: 28px;
+      padding-bottom: 28px;
+      border-bottom: 1px solid rgba(201,162,39,0.3);
+      display: inline-block;
+    }
+
+    .hero-tagline {
+      font-family: var(--font-body);
+      font-size: 19px;
+      font-style: italic;
+      color: rgba(245,239,224,0.85);
+      line-height: 1.6;
+      margin-bottom: 32px;
+      max-width: 420px;
+    }
+
+    .hero-tagline em {
+      color: var(--c-emas-terang);
+      font-style: italic;
+    }
+
+    .hero-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      background: var(--c-emas);
+      color: var(--c-hijau-tua);
+      font-family: var(--font-ui);
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      padding: 16px 38px;
+      text-decoration: none;
+      transition: all 0.35s;
+      border: 2px solid var(--c-emas);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-btn::before {
+      content: '';
+      position: absolute;
+      top: 0; left: -100%;
+      width: 100%; height: 100%;
+      background: var(--c-krem);
+      transition: left 0.35s;
+      z-index: -1;
+    }
+
+    .hero-btn:hover {
+      color: var(--c-hijau-tua);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(0,0,0,0.25);
+    }
+
+    .hero-btn:hover::before { left: 0; }
+
+    /* Hero Image — vintage frame style */
+    .hero-right {
+      position: relative;
+    }
+
+    .hero-frame {
+      position: relative;
+      padding: 12px;
+      background: var(--c-kayu);
+      box-shadow:
+        0 25px 80px rgba(0,0,0,0.35),
+        inset 0 0 0 1px rgba(255,255,255,0.15);
+    }
+
+    .hero-frame::before {
+      content: '';
+      position: absolute;
+      inset: 6px;
+      border: 1px solid rgba(201,162,39,0.4);
+      pointer-events: none;
+    }
+
+    .hero-frame img {
+      width: 100%;
+      height: auto;
+      display: block;
+      filter: saturate(1.05) contrast(1.02);
+    }
+
+    /* Corner ornaments on frame */
+    .corner-ornament {
+      position: absolute;
+      width: 24px; height: 24px;
+      border-color: var(--c-emas);
+      border-style: solid;
+      pointer-events: none;
+    }
+    .co-tl { top: 0; left: 0; border-width: 3px 0 0 3px; }
+    .co-tr { top: 0; right: 0; border-width: 3px 3px 0 0; }
+    .co-bl { bottom: 0; left: 0; border-width: 0 0 3px 3px; }
+    .co-br { bottom: 0; right: 0; border-width: 0 3px 3px 0; }
+
+    /* ─── SECTION COMMON ─── */
+    section { padding: 80px 24px; position: relative; }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 54px;
+    }
+
+    .section-label {
+      font-family: var(--font-ui);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--c-emas);
+      margin-bottom: 12px;
+    }
+
+    .section-title {
+      font-family: var(--font-display);
+      font-size: 36px;
+      font-weight: 700;
+      color: var(--c-hijau-tua);
+      margin-bottom: 12px;
+      line-height: 1.2;
+    }
+
+    .section-divider {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      margin-top: 20px;
+    }
+
+    .section-divider-line {
+      width: 60px;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--c-border), transparent);
+    }
+
+    .section-divider-icon {
+      color: var(--c-emas);
+      font-size: 14px;
+      letter-spacing: 8px;
+    }
+
+    /* ─── MENU SECTION ─── */
+    .menu {
+      background: var(--c-krem);
+    }
+
+    .menu-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 28px;
+      max-width: 1080px;
+      margin: 0 auto;
+    }
+
+    .menu-card {
+      background: #fff;
+      overflow: hidden;
+      transition: all 0.4s ease;
+      border: 1px solid rgba(196,180,154,0.4);
+      position: relative;
+    }
+
+    .menu-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--c-hijau-tua), var(--c-emas), var(--c-hijau-tua));
+      transform: scaleX(0);
+      transition: transform 0.4s ease;
+    }
+
+    .menu-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 50px rgba(74,124,82,0.12);
+      border-color: var(--c-border);
+    }
+
+    .menu-card:hover::before { transform: scaleX(1); }
+
+    .menu-card-thumb {
+      height: 160px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+      background: var(--c-krem);
+    }
+
+    .menu-card-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .menu-card-body {
+      padding: 24px 24px 28px;
+    }
+
+    .menu-card-num {
+      font-family: var(--font-ui);
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--c-emas);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    .menu-card-title {
+      font-family: var(--font-display);
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--c-hijau-tua);
+      margin-bottom: 10px;
+      line-height: 1.3;
+    }
+
+    .menu-card-desc {
+      font-size: 14px;
+      color: var(--c-text-ringan);
+      line-height: 1.7;
+    }
+
+    .menu-card-line {
+      width: 40px;
+      height: 2px;
+      background: var(--c-emas);
+      margin-top: 18px;
+    }
+
+    /* ─── DRINKS ─── */
+    .drinks {
+      background: linear-gradient(180deg, var(--c-krem-gelap) 0%, var(--c-krem) 100%);
+    }
+
+    .drinks-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 28px;
+      max-width: 640px;
+      margin: 0 auto;
+    }
+
+    .drink-card {
+      background: #fff;
+      border: 1px solid rgba(196,180,154,0.35);
+      padding: 36px 28px;
+      text-align: center;
+      transition: all 0.35s;
+      position: relative;
+    }
+
+    .drink-card::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 50%;
+      transform: translateX(-50%);
+      width: 0; height: 2px;
+      background: var(--c-merah-tanah);
+      transition: width 0.35s;
+    }
+
+    .drink-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.06);
+    }
+
+    .drink-card:hover::after { width: 60%; }
+
+    .drink-icon { font-size: 44px; margin-bottom: 16px; }
+
+    .drink-name {
+      font-family: var(--font-display);
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--c-merah-tanah);
+      margin-bottom: 8px;
+    }
+
+    .drink-desc {
+      font-size: 13.5px;
+      color: var(--c-text-ringan);
+      line-height: 1.7;
+    }
+
+    /* ─── ORDER INFO ─── */
+    .order-info {
+      background: var(--c-hijau-tua);
+      color: var(--c-krem);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .order-info::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background-image: url("data:image/svg+xml,%3Csvg width='120' height='120' viewBox='0 0 120 120' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='60' cy='60' r='1.5' fill='%23f5efe0' fill-opacity='0.06'/%3E%3C/svg%3E");
+      background-size: 120px 120px;
+    }
+
+    .order-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 24px;
+      max-width: 1000px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    .order-card {
+      background: rgba(245,239,224,0.06);
+      border: 1px solid rgba(201,162,39,0.2);
+      padding: 34px 24px;
+      text-align: center;
+      transition: all 0.35s;
+      position: relative;
+    }
+
+    .order-card:hover {
+      background: rgba(245,239,224,0.1);
+      border-color: rgba(201,162,39,0.4);
+    }
+
+    .order-icon { font-size: 40px; margin-bottom: 16px; }
+
+    .order-label {
+      font-family: var(--font-ui);
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--c-emas);
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    .order-value {
+      font-family: var(--font-display);
+      font-size: 26px;
+      font-weight: 700;
+      color: #fff;
+      line-height: 1.3;
+    }
+
+    .order-note {
+      font-size: 13px;
+      color: rgba(245,239,224,0.5);
+      margin-top: 10px;
+    }
+
+    .order-value a {
+      color: var(--c-emas);
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    .order-value a:hover { color: var(--c-emas-terang); }
+
+    /* ─── CTA ─── */
+    .cta-section {
+      background: var(--c-coklat);
+      text-align: center;
+      padding: 80px 24px;
+      position: relative;
+    }
+
+    .cta-section::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--c-emas), transparent, var(--c-emas));
+    }
+
+    .cta-title {
+      font-family: var(--font-display);
+      font-size: 34px;
+      font-weight: 700;
+      color: var(--c-emas);
+      margin-bottom: 12px;
+    }
+
+    .cta-desc {
+      font-size: 17px;
+      color: rgba(245,239,224,0.7);
+      margin-bottom: 34px;
+      font-style: italic;
+    }
+
+    .cta-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      background: var(--c-emas);
+      color: var(--c-hijau-tua);
+      font-family: var(--font-ui);
+      font-size: 15px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      padding: 18px 48px;
+      text-decoration: none;
+      transition: all 0.35s;
+      border: 2px solid var(--c-emas);
+    }
+
+    .cta-btn:hover {
+      background: transparent;
+      color: var(--c-emas);
+      transform: translateY(-2px);
+    }
+
+    /* ─── FOOTER ─── */
+    .footer {
+      background: #1a1a0e;
+      color: rgba(245,239,224,0.5);
+      text-align: center;
+      padding: 48px 24px 32px;
+      font-size: 14px;
+    }
+
+    .footer-brand {
+      font-family: var(--font-display);
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--c-emas);
+      margin-bottom: 8px;
+      letter-spacing: 2px;
+    }
+
+    .footer-tagline {
+      font-style: italic;
+      color: rgba(245,239,224,0.4);
+      font-size: 14px;
+      margin-bottom: 20px;
+    }
+
+    .footer-links {
+      margin: 20px 0;
+    }
+
+    .footer-links a {
+      color: rgba(245,239,224,0.6);
+      text-decoration: none;
+      margin: 0 16px;
+      font-family: var(--font-ui);
+      font-size: 13px;
+      letter-spacing: 0.5px;
+      transition: color 0.3s;
+    }
+
+    .footer-links a:hover { color: var(--c-emas); }
+
+    .footer-meta {
+      font-size: 12.5px;
+      color: rgba(245,239,224,0.35);
+      margin-top: 20px;
+      line-height: 1.8;
+    }
+
+    .footer-copy {
+      font-size: 11px;
+      color: rgba(245,239,224,0.2);
+      margin-top: 20px;
+      letter-spacing: 1px;
+    }
+
+    /* Top ornament for footer */
+    .footer::before {
+      content: '❧ ❧ ❧';
+      display: block;
+      color: var(--c-emas);
+      opacity: 0.3;
+      font-size: 12px;
+      letter-spacing: 12px;
+      margin-bottom: 24px;
+    }
+
+    /* ─── WHATSAPP FLOAT ─── */
+    .wa-float {
+      position: fixed;
+      bottom: 28px;
+      right: 28px;
+      background: #25d366;
+      color: #fff;
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 26px;
+      box-shadow: 0 6px 24px rgba(37,211,102,0.35);
+      text-decoration: none;
+      z-index: 999;
+      transition: transform 0.3s, box-shadow 0.3s;
+      border: none;
+    }
+
+    .wa-float:hover {
+      transform: scale(1.08);
+      box-shadow: 0 8px 32px rgba(37,211,102,0.45);
+    }
+
+    /* ─── SCROLL ANIMATIONS ─── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 860px) {
+      .hero-inner {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        text-align: center;
+      }
+      .hero-left { padding-right: 0; }
+      .hero-tagline { max-width: 100%; margin-left: auto; margin-right: auto; }
+      .hero-subtitle { display: block; }
+      .hero-frame { max-width: 480px; margin: 0 auto; }
+    }
+
+    @media (max-width: 600px) {
+      .nav { padding: 0 16px; }
+      .nav-links { display: none; }
+      .nav-logo { font-size: 16px; }
+      .hero { padding: 48px 18px 64px; }
+      .hero-title { font-size: 38px; }
+      .hero-brand { font-size: 11px; letter-spacing: 3px; }
+      .hero-tagline { font-size: 16px; }
+      .hero-btn { padding: 14px 28px; font-size: 12px; }
+      section { padding: 56px 16px; }
+      .section-title { font-size: 27px; }
+      .menu-grid { grid-template-columns: 1fr; }
+      .menu-card-thumb { height: 130px; }
+      .cta-title { font-size: 26px; }
+      .order-value { font-size: 22px; }
+      .hero-frame { padding: 8px; }
+      .corner-ornament { width: 16px; height: 16px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <a href="#" class="nav-logo">DJ Gourmet</a>
+  <div class="nav-links">
+    <a href="#menu">Menu</a>
+    <a href="#drinks">Minuman</a>
+    <a href="#order">Cara Order</a>
+    <a href="#contact">Hubungi</a>
+  </div>
+  <a href="https://wa.me/60168027076" class="nav-cta" target="_blank">Order Sekarang</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-left">
+      <div class="hero-status">&#x25C6; Dibuka Sekarang &#x25C6;</div>
+      <div class="hero-brand">DJ Gourmet Sdn Bhd</div>
+      <h1 class="hero-title">Masakan<br>Kampung<br><em style="font-weight:400;font-style:italic;color:var(--c-emas);">Rasa Sejati</em></h1>
+      <div class="hero-subtitle">Resipi Warisan &middot; Cita Rasa Melayu</div>
+      <p class="hero-tagline">Hidangan tradisional yang disediakan dengan penuh kasih sayang, membawa kembali kenangan <em>masak mak</em> di dapur kampung.</p>
+      <a href="https://wa.me/60168027076" class="hero-btn" target="_blank">
+        &#x2709; Tempah Sekarang
+      </a>
+    </div>
+    <div class="hero-right">
+      <div class="hero-frame">
+        <span class="corner-ornament co-tl"></span>
+        <span class="corner-ornament co-tr"></span>
+        <span class="corner-ornament co-bl"></span>
+        <span class="corner-ornament co-br"></span>
+        <img src="dj-gourmet-product.jpg" alt="Set Makanan DJ Gourmet — Nasi Campur Kampung">
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="batik-border-top"></div>
+
+<!-- MENU -->
+<section class="menu" id="menu">
+  <div class="section-header reveal">
+    <div class="section-label">Senarai Hidangan Kami</div>
+    <h2 class="section-title">Menu Masakan Kampung</h2>
+    <div class="section-divider">
+      <span class="section-divider-line"></span>
+      <span class="section-divider-icon">&#x273F;</span>
+      <span class="section-divider-line"></span>
+    </div>
+  </div>
+
+  <div class="menu-grid">
+
+    <div class="menu-card reveal">
+      <div class="menu-card-thumb">
+        <img src="dish_ayam_goreng_photo.png" alt="Ayam Goreng / Masak Merah">
+      </div>
+      <div class="menu-card-body">
+        <div class="menu-card-num">Hidangan 01</div>
+        <h3 class="menu-card-title">Ayam Goreng / Masak Merah</h3>
+        <p class="menu-card-desc">Ayam goreng rangup atau masak merah kaya rempah, disediakan dengan resepi kampung yang diwarisi turun-temurun.</p>
+        <div class="menu-card-line"></div>
+      </div>
+    </div>
+
+    <div class="menu-card reveal">
+      <div class="menu-card-thumb">
+        <img src="dish_rendang_photo.png" alt="Rendang Daging / Ayam">
+      </div>
+      <div class="menu-card-body">
+        <div class="menu-card-num">Hidangan 02</div>
+        <h3 class="menu-card-title">Rendang Daging / Ayam</h3>
+        <p class="menu-card-desc">Rendang yang dimasak perlahan dengan santan dan rempah ratus pilihan, mengikut cara tradisional Melayu.</p>
+        <div class="menu-card-line"></div>
+      </div>
+    </div>
+
+    <div class="menu-card reveal">
+      <div class="menu-card-thumb">
+        <img src="dish_kari_photo.png" alt="Kari Daging / Ayam">
+      </div>
+      <div class="menu-card-body">
+        <div class="menu-card-num">Hidangan 03</div>
+        <h3 class="menu-card-title">Kari Daging / Ayam</h3>
+        <p class="menu-card-desc">Kari berempah dengan santan pekat, dihidangkan bersama kentang lembut yang menyerap rasa rempah.</p>
+        <div class="menu-card-line"></div>
+      </div>
+    </div>
+
+    <div class="menu-card reveal">
+      <div class="menu-card-thumb">
+        <img src="dish_sayuran_photo.png" alt="Sayuran & Ulam-ulaman">
+      </div>
+      <div class="menu-card-body">
+        <div class="menu-card-num">Hidangan 04</div>
+        <h3 class="menu-card-title">Sayuran &amp; Ulam-ulaman</h3>
+        <p class="menu-card-desc">Sayuran segar dan ulam kampung pilihan, lengkap dengan sambal belacan yang menyelerakan.</p>
+        <div class="menu-card-line"></div>
+      </div>
+    </div>
+
+    <div class="menu-card reveal">
+      <div class="menu-card-thumb">
+        <img src="dish_ikan_photo.png" alt="Ikan Masak Kicap / Asam / Lemak">
+      </div>
+      <div class="menu-card-body">
+        <div class="menu-card-num">Hidangan 05</div>
+        <h3 class="menu-card-title">Ikan Kicap / Asam / Lemak</h3>
+        <p class="menu-card-desc">Ikan segar dimasak mengikut citarasa — kicap manis, asam pedas, atau lemak cili padi.</p>
+        <div class="menu-card-line"></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<div class="batik-border-bottom"></div>
+
+<!-- DRINKS -->
+<section class="drinks" id="drinks">
+  <div class="section-header reveal">
+    <div class="section-label">Tambahan Kesegaran</div>
+    <h2 class="section-title">Minuman</h2>
+    <div class="section-divider">
+      <span class="section-divider-line"></span>
+      <span class="section-divider-icon">&#x273F;</span>
+      <span class="section-divider-line"></span>
+    </div>
+  </div>
+
+  <div class="drinks-grid">
+    <div class="drink-card reveal">
+      <div class="drink-icon">&#x1F964;</div>
+      <div class="drink-name">Sirap</div>
+      <p class="drink-desc">Sirap rose segar dicampur ais, minuman tradisional yang digemari semua peringkat umur.</p>
+    </div>
+    <div class="drink-card reveal">
+      <div class="drink-icon">&#x1F9CA;</div>
+      <div class="drink-name">Jus Oren</div>
+      <p class="drink-desc">Jus oren segar bertambah kesegaran, disajikan dengan hirisan buah oren asli.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ORDER INFO -->
+<section class="order-info" id="order">
+  <div class="section-header reveal">
+    <div class="section-label" style="color:var(--c-emas);">Maklumat Penting</div>
+    <h2 class="section-title" style="color:#fff;">Cara Order &amp; Waktu Operasi</h2>
+    <div class="section-divider">
+      <span class="section-divider-line" style="background:linear-gradient(90deg,transparent,rgba(201,162,39,0.4),transparent);"></span>
+      <span class="section-divider-icon" style="color:var(--c-emas);">&#x273F;</span>
+      <span class="section-divider-line" style="background:linear-gradient(90deg,transparent,rgba(201,162,39,0.4),transparent);"></span>
+    </div>
+  </div>
+
+  <div class="order-grid">
+
+    <div class="order-card reveal">
+      <div class="order-icon">&#x1F315;</div>
+      <div class="order-label">Status</div>
+      <div class="order-value" style="color:var(--c-emas);">Dibuka</div>
+      <div class="order-note">Kami sedang menerima tempahan</div>
+    </div>
+
+    <div class="order-card reveal">
+      <div class="order-icon">&#x1F550;</div>
+      <div class="order-label">Masa Order</div>
+      <div class="order-value">10:30 PG<br>&mdash;<br>1:30 PTG</div>
+      <div class="order-note">Tempahan dalam talian sahaja</div>
+    </div>
+
+    <div class="order-card reveal">
+      <div class="order-icon">&#x1F6CD;</div>
+      <div class="order-label">Cara Ambil</div>
+      <div class="order-value">Take Away</div>
+      <div class="order-note">Sila hubungi kami untuk pengambilan</div>
+    </div>
+
+    <div class="order-card reveal">
+      <div class="order-icon">&#x260E;</div>
+      <div class="order-label">WhatsApp</div>
+      <div class="order-value" style="font-size:21px;">
+        <a href="https://wa.me/60168027076" target="_blank">016-802 7076</a>
+      </div>
+      <div class="order-note">Klik nombor untuk terus WhatsApp</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <h2 class="cta-title reveal">Ada Selera? Jom Tempah!</h2>
+  <p class="cta-desc reveal">Setiap hidangan disediakan dengan penuh dedikasi dan cinta.</p>
+  <a href="https://wa.me/60168027076" class="cta-btn reveal" target="_blank">&#x2709; Order via WhatsApp</a>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer" id="contact">
+  <div class="footer-brand">DJ Gourmet Sdn Bhd</div>
+  <p class="footer-tagline">Masakan Kampung, Rasa Sejati, Menyelerakan</p>
+  <div class="footer-links">
+    <a href="https://wa.me/60168027076" target="_blank">&#x1F4F1; WhatsApp: 016-802 7076</a>
+  </div>
+  <div class="footer-meta">
+    Waktu Order: 10:30 PG &mdash; 1:30 PTG<br>
+    Take Away sahaja
+  </div>
+  <div class="footer-copy">&copy; 2026 DJ Gourmet Sdn Bhd. Hak cipta terpelihara.</div>
+</footer>
+
+<!-- WHATSAPP FLOAT -->
+<a href="https://wa.me/60168027076" class="wa-float" target="_blank" title="Order via WhatsApp">&#x2709;</a>
+
+<!-- SCROLL REVEAL -->
+<script>
+  document.querySelectorAll('.reveal').forEach(function(el) {
+    var observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    observer.observe(el);
+  });
+</script>
+
+</body>
+</html>
