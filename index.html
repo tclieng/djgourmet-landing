@@ -1309,6 +1309,18 @@
       var msg = 'Hai DJ Gourmet, saya ingin memesan:';
       if (sel.length) {
         msg += '\n\n' + sel.map(function(s) { return '\u2022 ' + s; }).join('\n');
+      } else {
+        // Default: show full menu for quick reply
+        msg += '\n\n' + [
+          '1. \ud83d\udc57 Ayam Goreng / Masak Merah',
+          '2. \ud83c\udf6d Rendang Daging / Ayam',
+          '3. \ud83c\udf5b Kari Daging / Ayam',
+          '4. \ud83e\udd6c Sayuran & Ulam-ulaman',
+          '5. \ud83d\udc1f Ikan Kicap / Asam / Lemak',
+          '6. \ud83e\udd64 Sirap',
+          '7. \ud83e\uddca Jus Oren'
+        ].join('\n');
+        msg += '\n\nSila reply dengan nombor hidangan.';
       }
       msg += '\n\nBoleh bantu?';
       return base + '?text=' + encodeURIComponent(msg);
