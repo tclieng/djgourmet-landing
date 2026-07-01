@@ -1303,16 +1303,30 @@
       });
     }
 
+    function waUrl() {
+      var base = 'https://wa.me/60168027076';
+      var sel = window.__djSelected || [];
+      var msg = 'Hai DJ Gourmet, saya ingin memesan:';
+      if (sel.length) {
+        msg += '\n\n' + sel.map(function(s) { return '\u2022 ' + s; }).join('\n');
+      }
+      msg += '\n\nBoleh bantu?';
+      return base + '?text=' + encodeURIComponent(msg);
+    }
+
     function renderSelection() {
       selEl.innerHTML = '';
+      window.__djSelected = [];
       if (selected.size === 0) {
         selEl.classList.add('empty-text');
         selEl.classList.remove('has-items');
         selEl.innerHTML = 'Pilih item dari senarai di atas...';
+        updateExternalWa();
         return;
       }
       selEl.classList.remove('empty-text');
       selEl.classList.add('has-items');
+      selected.forEach(function(i) { window.__djSelected.push(items[i].label); });
       selected.forEach(function(i) {
         var chip = document.createElement('span');
         chip.className = 'chip';
@@ -1326,28 +1340,34 @@
             row.querySelector('.picker-note').textContent = 'Pilih';
           }
           renderSelection();
-          updateButton();
         });
         selEl.appendChild(chip);
+      });
+      updateExternalWa();
+    }
+
+    function updateExternalWa() {
+      var url = waUrl();
+      ['wa-float','nav-cta','hero-btn','cta-btn'].forEach(function(cls){
+        var el = document.querySelector('a.'+cls);
+        if(el) el.href=url;
+      });
+      document.querySelectorAll('.footer a').forEach(function(el){
+        if(el.href && el.href.indexOf('wa.me/60168027076')!==-1) el.href=url;
       });
     }
 
     function updateButton() {
-      var selectedItems = [];
-      selected.forEach(function(i) { selectedItems.push(items[i].label); });
       if (selected.size === 0) {
         btnEl.disabled = true;
-        btnEl.removeAttribute('href');
+        btnEl.href = waUrl();
         countEl.textContent = 'Sila pilih sekurang-kurangnya satu item';
       } else {
-        var msg = 'Hai DJ Gourmet, saya ingin memesan:\n\n' +
-          selectedItems.map(function(s) { return '\u2022 ' + s; }).join('\n') +
-          '\n\nBoleh bantu?';
-        var encoded = encodeURIComponent(msg);
-        btnEl.href = 'https://wa.me/60168027076?text=' + encoded;
-        btnEl.disabled = false;
+        btnEl.href = waUrl();
+        btnEl.removeAttribute('disabled');
         countEl.textContent = selected.size + ' item dipilih';
       }
+      updateExternalWa();
     }
 
     renderList();
@@ -1356,7 +1376,6 @@
 
   document.querySelectorAll('.reveal').forEach(function(el) {
     var observer = new IntersectionObserver(function(entries) {
-      entries.forEach(function(entry) {
         if (entry.isIntersecting) {
           entry.target.classList.add('visible');
           observer.unobserve(entry.target);
