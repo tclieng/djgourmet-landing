@@ -763,6 +763,208 @@
       box-shadow: 0 8px 32px rgba(37,211,102,0.45);
     }
 
+    /* ─── ORDER PICKER ─── */
+    .order-picker {
+      background: linear-gradient(180deg, var(--c-krem-gelap) 0%, var(--c-krem) 100%);
+      padding: 80px 24px;
+      position: relative;
+    }
+
+    .picker-header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .picker-title {
+      font-family: var(--font-display);
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--c-hijau-tua);
+      margin-bottom: 8px;
+    }
+
+    .picker-sub {
+      font-size: 14px;
+      color: var(--c-text-ringan);
+      font-style: italic;
+    }
+
+    .picker-list {
+      max-width: 800px;
+      margin: 0 auto 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .picker-row {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      background: #fff;
+      border: 1px solid rgba(196,180,154,0.45);
+      padding: 14px 18px;
+      border-radius: 2px;
+      transition: all 0.25s;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .picker-row:hover {
+      border-color: var(--c-border);
+      box-shadow: 0 8px 28px rgba(0,0,0,0.05);
+      transform: translateX(4px);
+    }
+
+    .picker-row.selected {
+      background: var(--c-hijau-tua);
+      color: var(--c-krem);
+      border-color: var(--c-hijau-tua);
+      box-shadow: 0 10px 30px rgba(26,61,32,0.18);
+      transform: translateX(6px);
+    }
+
+    .picker-emoji {
+      font-size: 22px;
+      width: 30px;
+      text-align: center;
+      flex-shrink: 0;
+      pointer-events: none;
+    }
+
+    .picker-label {
+      font-family: var(--font-display);
+      font-size: 16px;
+      font-weight: 700;
+      letter-spacing: 0.3px;
+      pointer-events: none;
+    }
+
+    .picker-note {
+      margin-left: auto;
+      font-family: var(--font-ui);
+      font-size: 11px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      opacity: 0.55;
+      pointer-events: none;
+      transition: opacity 0.25s;
+    }
+
+    .picker-row.selected .picker-note {
+      opacity: 1;
+      color: var(--c-emas);
+    }
+
+    .picker-selection {
+      max-width: 800px;
+      margin: 0 auto 22px;
+      min-height: 52px;
+      padding: 14px 18px;
+      background: rgba(26,61,32,0.06);
+      border: 2px dashed rgba(26,61,32,0.25);
+      border-radius: 2px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+      transition: all 0.3s;
+    }
+
+    .picker-selection.has-items {
+      background: rgba(26,61,32,0.08);
+      border-style: solid;
+      border-color: rgba(26,61,32,0.35);
+    }
+
+    .picker-selection.empty-text {
+      color: rgba(61,41,20,0.45);
+      font-style: italic;
+      font-size: 14px;
+    }
+
+    .chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--c-hijau-tua);
+      color: var(--c-krem);
+      padding: 7px 12px;
+      font-family: var(--font-ui);
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.8px;
+      border-radius: 1px;
+      animation: chipIn 0.22s ease;
+    }
+
+    @keyframes chipIn {
+      from { opacity: 0; transform: scale(0.9); }
+      to   { opacity: 1; transform: scale(1); }
+    }
+
+    .chip button {
+      background: transparent;
+      color: var(--c-emas);
+      border: none;
+      cursor: pointer;
+      font-size: 14px;
+      line-height: 1;
+      padding: 0;
+      width: 16px;
+      height: 16px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .picker-row.selected .picker-label {
+      font-weight: 700;
+    }
+
+    .picker-actions {
+      text-align: center;
+    }
+
+    .picker-wa-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: #25d366;
+      color: #fff;
+      font-family: var(--font-ui);
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      padding: 16px 38px;
+      border-radius: 2px;
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.3s;
+      box-shadow: 0 8px 24px rgba(37,211,102,0.35);
+    }
+
+    .picker-wa-btn:hover {
+      background: #1fb855;
+      transform: translateY(-2px);
+      box-shadow: 0 12px 30px rgba(37,211,102,0.45);
+    }
+
+    .picker-wa-btn:disabled {
+      background: rgba(37,211,102,0.45);
+      cursor: not-allowed;
+      transform: none;
+      box-shadow: none;
+    }
+
+    .picker-wa-count {
+      margin-top: 12px;
+      font-size: 12.5px;
+      color: var(--c-text-ringan);
+    }
+
     /* ─── SCROLL ANIMATIONS ─── */
     .reveal {
       opacity: 0;
@@ -805,6 +1007,8 @@
       .order-value { font-size: 22px; }
       .hero-frame { padding: 8px; }
       .corner-ornament { width: 16px; height: 16px; }
+      .picker-row { padding: 12px 14px; }
+      .picker-label { font-size: 15px; }
     }
   </style>
 </head>
@@ -954,6 +1158,29 @@
   </div>
 </section>
 
+<!-- ORDER PICKER -->
+<section class="order-picker" id="orderPicker">
+  <div class="picker-header reveal">
+    <div class="section-label" style="color:var(--c-emas);">Tempah dengan mudah</div>
+    <h2 class="picker-title">Pilih Menu & Hubungi Kami</h2>
+    <p class="picker-sub">Klik pilihan yang anda inginkan, kemudian hantar terus ke WhatsApp.</p>
+  </div>
+
+  <div class="picker-list reveal" id="pickerList"></div>
+
+  <div class="picker-selection reveal empty-text" id="pickerSelection">
+    Pilih item dari senarai di atas...
+  </div>
+
+  <div class="picker-actions reveal">
+    <a href="#" class="picker-wa-btn" id="pickerWaBtn" target="_blank" rel="noopener">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="#fff" style="display:block"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.29.173-1.414-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      Hantar ke WhatsApp
+    </a>
+    <div class="picker-wa-count" id="pickerWaCount">Sila pilih sekurang-kurangnya satu item</div>
+  </div>
+</section>
+
 <!-- ORDER INFO -->
 <section class="order-info" id="order">
   <div class="section-header reveal">
@@ -1031,6 +1258,102 @@
 
 <!-- SCROLL REVEAL -->
 <script>
+  (function() {
+    var items = [
+      { emoji: '\u{1F357}', label: 'Ayam Goreng / Masak Merah', category: 'menu' },
+      { emoji: '\u{1F36D}', label: 'Rendang Daging / Ayam', category: 'menu' },
+      { emoji: '\u{1F35B}', label: 'Kari Daging / Ayam', category: 'menu' },
+      { emoji: '\u{1F96C}', label: 'Sayuran & Ulam-ulaman', category: 'menu' },
+      { emoji: '\u{1F41F}', label: 'Ikan Kicap / Asam / Lemak', category: 'menu' },
+      { emoji: '\u{1F964}', label: 'Sirap', category: 'drink' },
+      { emoji: '\u{1F9CA}', label: 'Jus Oren', category: 'drink' }
+    ];
+
+    var selected = new Set();
+
+    var listEl = document.getElementById('pickerList');
+    var selEl = document.getElementById('pickerSelection');
+    var btnEl = document.getElementById('pickerWaBtn');
+    var countEl = document.getElementById('pickerWaCount');
+
+    function renderList() {
+      items.forEach(function(item, idx) {
+        var row = document.createElement('div');
+        row.className = 'picker-row';
+        row.dataset.idx = idx;
+        row.innerHTML = '<span class="picker-emoji">' + item.emoji + '</span>' +
+          '<span class="picker-label">' + item.label + '</span>' +
+          '<span class="picker-note">Pilih</span>';
+        (function(i) {
+          row.addEventListener('click', function() {
+            if (selected.has(i)) {
+              selected.delete(i);
+              row.classList.remove('selected');
+              row.querySelector('.picker-note').textContent = 'Pilih';
+            } else {
+              selected.add(i);
+              row.classList.add('selected');
+              row.querySelector('.picker-note').textContent = 'Dipilih';
+            }
+            renderSelection();
+            updateButton();
+          });
+        })(idx);
+        listEl.appendChild(row);
+      });
+    }
+
+    function renderSelection() {
+      selEl.innerHTML = '';
+      if (selected.size === 0) {
+        selEl.classList.add('empty-text');
+        selEl.classList.remove('has-items');
+        selEl.innerHTML = 'Pilih item dari senarai di atas...';
+        return;
+      }
+      selEl.classList.remove('empty-text');
+      selEl.classList.add('has-items');
+      selected.forEach(function(i) {
+        var chip = document.createElement('span');
+        chip.className = 'chip';
+        chip.innerHTML = items[i].label + ' <button aria-label="Buang ' + items[i].label + '">&times;</button>';
+        chip.querySelector('button').addEventListener('click', function(e) {
+          e.stopPropagation();
+          selected.delete(i);
+          var row = listEl.querySelector('[data-idx="' + i + '"]');
+          if (row) {
+            row.classList.remove('selected');
+            row.querySelector('.picker-note').textContent = 'Pilih';
+          }
+          renderSelection();
+          updateButton();
+        });
+        selEl.appendChild(chip);
+      });
+    }
+
+    function updateButton() {
+      var selectedItems = [];
+      selected.forEach(function(i) { selectedItems.push(items[i].label); });
+      if (selected.size === 0) {
+        btnEl.disabled = true;
+        btnEl.removeAttribute('href');
+        countEl.textContent = 'Sila pilih sekurang-kurangnya satu item';
+      } else {
+        var msg = 'Hai DJ Gourmet, saya ingin memesan:\n\n' +
+          selectedItems.map(function(s) { return '\u2022 ' + s; }).join('\n') +
+          '\n\nBoleh bantu?';
+        var encoded = encodeURIComponent(msg);
+        btnEl.href = 'https://wa.me/60168027076?text=' + encoded;
+        btnEl.disabled = false;
+        countEl.textContent = selected.size + ' item dipilih';
+      }
+    }
+
+    renderList();
+    updateButton();
+  })();
+
   document.querySelectorAll('.reveal').forEach(function(el) {
     var observer = new IntersectionObserver(function(entries) {
       entries.forEach(function(entry) {
